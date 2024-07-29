@@ -1,15 +1,16 @@
 import {json} from '@sveltejs/kit'
+import { redirect } from '@sveltejs/kit';
 import { type } from 'os'
 
 export async function POST({request, cookies}){
     const data = await request.json()
-    const {username, password} = data
-    if(!username || !password){
+    
+    const {username, password, email} = data
+    if(!username || !password || !email){
         return json({message: "Missing  Username or Password"})
     }
-
-    async function addUser(username, password){
-        const uri = `https://eu-central-1.aws.data.mongodb-api.com/app/data-dwfvizn/endpoint/insert?username=${username}&password=${password}`
+    async function addUser(email, username, password){
+        const uri = `https://eu-central-1.aws.data.mongodb-api.com/app/data-dwfvizn/endpoint/insert?email=${email}&password=${password}&username=${username}`
         const res = await fetch(uri, {
             method: "POST",
             headers: {
@@ -21,8 +22,8 @@ export async function POST({request, cookies}){
         return data
     }
 
-    const user = await addUser(username, password);
+    const user = await addUser(email, username, password);
 
     cookies.set('Status', `${username}-${password}`, {path: '/'})
-    return json({message: `Logged In! ${user}`})
+    return redirect(302, '/dashboard')
 }
