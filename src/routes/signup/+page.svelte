@@ -1,4 +1,6 @@
 <script >
+import "../../app.css";
+import NavBar from "../../components/navBar/navBar.svelte";
 let username = ''
 let password = ''
 let email = ''
@@ -15,6 +17,7 @@ const  handleSubmit = async() => {
 }
 </script>
 
+<NavBar/>
 
 <main>
 	<h1>Create an account</h1>

@@ -1,4 +1,7 @@
 <script lang="ts">
+import "../../app.css";
+
+import NavBar from "../../components/navBar/navBar.svelte";
 let username:string, password:string, email = ""
 const  handleSubmit = async() => {
 	const response = await fetch('/login', {
@@ -9,6 +12,7 @@ const  handleSubmit = async() => {
 	const data = await response.json()
 }
 </script>
+<NavBar/>
 <main>
 	<h1>Login</h1>
 	<form on:submit={handleSubmit} class="auth-form">
@@ -25,4 +29,4 @@ const  handleSubmit = async() => {
 </main>
 
 
-<h1 class = "mb-4">Home</h1>
+
