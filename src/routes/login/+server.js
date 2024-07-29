@@ -1,13 +1,10 @@
 import {json} from '@sveltejs/kit'
 import { type } from 'os'
-
+import { redirect } from '@sveltejs/kit'
 export async function POST({request, cookies}){
     const data = await request.json()
-    const {username, password} = data
-    let cookie = cookies.get('Status')
-    if(cookie === ''){
-        return json({message: "Already Logged In"})
-    }
+    const {username, password, email} = data
+
     if(!username || !password){
         return json({message: "Missing  Username or Password"})
     }
@@ -25,7 +22,11 @@ export async function POST({request, cookies}){
     }
 
     const user = await getUser(username);
-
-   
-    return json({message: `Logged In! ${user}`})
+    
+    if(user.username == username && user.password == password && user.email == email){
+        cookies.set('Status', `${username}-${password}`, {path: '/'})
+        redirect(302, '/dashboard')
+    }else{
+        return json({message: `Wrong username, email or password`})
+    }
 }
