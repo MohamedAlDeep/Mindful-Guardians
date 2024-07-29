@@ -1,6 +1,8 @@
 <script>
     import MainImage from '../assets/happy-teenagers-foreground.jpg'
-
+    import NavBar from '../components/navBar/navBar.svelte';
+    import "../app.css";
+    export let data
 </script>
 <style>
     .image-container {
@@ -19,6 +21,7 @@
   z-index: 1; /* Ensures the overlay is above the image */
 }
 </style>
+<NavBar cookie = {data.status}/>
 <div class="relative">
     <div class="image-container">
         <img src={MainImage} alt="main image">
