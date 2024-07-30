@@ -15,16 +15,8 @@ function toggleClass() {
     </div>
     <nav class="flex flex-col-reverse md:flex-row items-center gap-16 mt-4 md:mt-0 mx-auto realtive ">
         <ul class="flex flex-col md:flex-row gap-4 align-center {isActive ? '' : 'hidden'}">
-<<<<<<< Updated upstream
-        <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500">Blog</a></li>
-        <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500">Courses</a></li>
-||||||| Stash base
-        <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500">Blog</a></li>
-        <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500">Courses</a></li>
-=======
         <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500"> Blog</a></li>
         <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500">Courses</a></li>
->>>>>>> Stashed changes
         <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500">Library</a></li>
         <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500">About Us</a></li>
         </ul>
