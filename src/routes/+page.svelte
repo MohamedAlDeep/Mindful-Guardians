@@ -22,7 +22,7 @@
 }
 
 </style>
-<NavBar cookie = {data.status}/>
+<NavBar cookie = {data.status} home={true}/>
 <div class="relative">
     <div class="image-container">
         <img src={MainImage} alt="main image">
