@@ -1,5 +1,5 @@
 import { json, redirect } from "@sveltejs/kit";
-
+import {getUser} from "$lib/index.js";
 export function load({cookies}) {
     let cookie = cookies.get('Status')
     while(cookie){
@@ -7,17 +7,6 @@ export function load({cookies}) {
     }
 }
 
-async function getUser(email){
-    const uri = `https://eu-central-1.aws.data.mongodb-api.com/app/data-dwfvizn/endpoint/getPost?email=${email}`
-    const res = await fetch(uri, {
-        headers: {
-                "Content-Type": "application/json",
-                "api-key": "9A6INzZMr8BiTTy4ZXRxVlZXv5yHNxvjBgp2qI7hRItmTnieT6TGfKiyHxrtJ95X"
-        }
-    })
-    const data = await res.json()
-    return data
-}
 
 export const actions = {
 	login: async ({ cookies, request }) => {
