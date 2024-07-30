@@ -11,8 +11,8 @@ export async function getUser(email){
     return data
 }
 
-export async function addUser(email, username, password){
-    const uri = `https://eu-central-1.aws.data.mongodb-api.com/app/data-dwfvizn/endpoint/insert?email=${email}&password=${password}&username=${username}`
+export async function addUser(email, username, password, parent, img){
+    const uri = `https://eu-central-1.aws.data.mongodb-api.com/app/data-dwfvizn/endpoint/insert?email=${email}&password=${password}&username=${username}&parent=${parent}&image=${img}`
     const res = await fetch(uri, {
         method: "POST",
         headers: {

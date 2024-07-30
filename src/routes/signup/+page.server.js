@@ -1,5 +1,5 @@
-import { redirect } from '@sveltejs/kit';
-import { addUser } from '$lib';
+import { redirect, json } from '@sveltejs/kit';
+import { addUser } from '$lib/index.js';
 export function load({request, cookies}) {
     
     let cookie = cookies.get('Status')
@@ -17,14 +17,21 @@ export const actions = {
 		const first_name = data.get('first-name');
 		const last_name = data.get('last-name');
 		const password = data.get('password');
-
+		let parent = data.get('parent');
+        if(parent == null){
+           parent = false
+        }else{
+            parent = true
+        }
+       
         const username = `${first_name} ${last_name}`
-        await addUser(email, username, password);
+        let img = ''
+        await addUser(email, username, password, parent, img);
 
         if(!username || !password || !email){
             return json({message: "Missing  Name or Password"})
         }
-        cookies.set('Status', `${username}-${password}`, {path: '/'})
+        cookies.set('Status', `${email}-${password}`, {path: '/'})
 		return redirect(302, '/dashboard')
 	},
 };

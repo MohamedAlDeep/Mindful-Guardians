@@ -24,8 +24,8 @@ function toggleClass() {
             {#if cookie == true}
                 <a href="/signout" class="bg-green-200">Sign Out</a> 
             {:else}
-            <a href="/signup" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">Sign Up</a>
-            <a href="/login" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">Log In</a>  
+            <a href="/signup" class="bg-blue-500 hover:bg-blue-700 text-white font-bold  py-2 px-4 rounded">Sign Up</a>
+            <a href="/login" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Log In</a>  
             {/if}
         </div>  
     </nav>
