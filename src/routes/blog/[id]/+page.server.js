@@ -1,4 +1,5 @@
-export async function load({cookies}) {
+export async function load({params}) {
+    const param = params.id
     async function getBlogs(){
         const uri = 'https://eu-central-1.aws.data.mongodb-api.com/app/data-dwfvizn/endpoint/getBlogs'
         const res = await fetch(uri, {
