@@ -4,7 +4,7 @@
     import NoImg from '../../../assets/user-3331257.svg'
 </script>
 
-<NavBar cookie={true} home={false}/>
+<NavBar cookie={true} />
 
 {#if data.user.image == ''}
     <img src={NoImg} alt="Generic User Image (No image)">
