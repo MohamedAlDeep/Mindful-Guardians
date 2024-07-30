@@ -25,7 +25,7 @@ export async function POST({request, cookies}){
     
     if(user.username == username && user.password == password && user.email == email){
         cookies.set('Status', `${username}-${password}`, {path: '/'})
-        redirect(302, '/dashboard')
+        return redirect(302, '/dashboard')
     }else{
         return json({message: `Wrong username, email or password`})
     }
