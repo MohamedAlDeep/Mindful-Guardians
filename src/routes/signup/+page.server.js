@@ -1,24 +1,13 @@
-import { redirect, json } from '@sveltejs/kit';
-
+import { redirect } from '@sveltejs/kit';
+import { addUser } from '$lib';
 export function load({request, cookies}) {
+    
     let cookie = cookies.get('Status')
     if(cookie){
         throw redirect(302, '/dashboard');
     }
 }
 
-async function addUser(email, username, password){
-    const uri = `https://eu-central-1.aws.data.mongodb-api.com/app/data-dwfvizn/endpoint/insert?email=${email}&password=${password}&username=${username}`
-    const res = await fetch(uri, {
-        method: "POST",
-        headers: {
-                "Content-Type": "application/json",
-                "api-key": "9A6INzZMr8BiTTy4ZXRxVlZXv5yHNxvjBgp2qI7hRItmTnieT6TGfKiyHxrtJ95X"
-        }
-    })
-    const data = await res.json()
-    return data
-}
 
 export const actions = {
 	signup: async ({ cookies, request }) => {
