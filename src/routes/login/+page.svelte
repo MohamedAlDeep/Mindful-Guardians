@@ -4,7 +4,7 @@ import "../../app.css";
 import NavBar from "../../components/navBar/navBar.svelte";
 
 </script>
-<NavBar cookie={false}/>	
+<NavBar cookie={false} home={false}/>	
 <main>
 	<form method="POST" action="?/login">
 		<div class="border-b border-gray-900/10 pb-12">
@@ -34,3 +34,6 @@ import NavBar from "../../components/navBar/navBar.svelte";
 
 
 
+<style>
+	
+</style>

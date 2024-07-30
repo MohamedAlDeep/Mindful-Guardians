@@ -18,7 +18,7 @@ export const actions = {
 		const last_name = data.get('last-name');
 		const password = data.get('password');
         
-        const radio = data.get('bordered-radio')
+        const selection = data.get('selection')
         let parent = data.get('parent');
         
         if(parent == null){
@@ -26,14 +26,11 @@ export const actions = {
         }else{
             parent = true
         }
-        console.log('Radio -> ',radio)
+        console.log('Data-> ',data)
         const username = `${first_name} ${last_name}`
         let img = ''
-        await addUser(email, username, password, parent, img);
+        await addUser(email, username, password, parent, img, selection);
 
-        if(!username || !password || !email){
-            return json({message: "Missing  Name or Password"})
-        }
         cookies.set('Status', `${email}-${password}`, {path: '/'})
 		return redirect(302, '/dashboard')
 	},

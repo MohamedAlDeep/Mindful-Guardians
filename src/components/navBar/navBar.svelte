@@ -1,6 +1,6 @@
 <script>
 import Logo from '../../assets/Logo.png';
-
+export let home
 export let cookie
 let isActive = true;
 function toggleClass() {
@@ -15,14 +15,18 @@ function toggleClass() {
     </div>
     <nav class="flex flex-col-reverse md:flex-row items-center gap-16 mt-4 md:mt-0 mx-auto realtive ">
         <ul class="flex flex-col md:flex-row gap-4 align-center {isActive ? '' : 'hidden'}">
-        <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500"> Blog</a></li>
-        <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500">Courses</a></li>
-        <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500">Library</a></li>
-        <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500">About Us</a></li>
+        <li><a href="" class="text-lg md:text-2xl  text-teal-60011 hover:text-teal-50011 colorCss"> Blog</a></li>
+        <li><a href="" class="text-lg md:text-2xl  text-teal-60011 hover:text-teal-50011 colorCss">Courses</a></li>
+        <li><a href="" class="text-lg md:text-2xl  text-teal-60011 hover:text-teal-50011 colorCss">Library</a></li>
+        <li><a href="" class="text-lg md:text-2xl  text-teal-60011 hover:text-teal-50011 colorCss">About Us</a></li>
         </ul>
         <div class="flex flex-row md:flex-row items-center gap-4">
             {#if cookie == true}
-                <a href="/signout" class="bg-green-200">Sign Out</a> 
+                {#if home == true}
+                <a href="/dashboard" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Dashboard</a>
+                {:else}
+                <a href="/signout" class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Sign Out</a>
+                {/if} 
             {:else}
             <a href="/signup" class="bg-blue-500 hover:bg-blue-700 text-white font-bold  py-2 px-4 rounded">Sign Up</a>
             <a href="/login" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Log In</a>  
@@ -36,3 +40,9 @@ function toggleClass() {
     </div>
 </header>
 
+<style>
+    .colorCss{
+        color: #3B82F6;
+    }
+    
+</style>

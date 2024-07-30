@@ -3,7 +3,7 @@ import "../../app.css";
 import NavBar from "../../components/navBar/navBar.svelte";
 </script>
 
-<NavBar cookie={false}/>
+<NavBar cookie={false} home={false}/>
 
 <main>
 	<form method="POST" action="?/signup" class="auth-form">
@@ -40,7 +40,7 @@ import NavBar from "../../components/navBar/navBar.svelte";
 					<!-- Radio Button -->
 
 					
-					<h3 class="mt-5 font-medium">Gender</h3>
+					<!-- <h3 class="mt-5 font-medium">Gender</h3>
 					<div class="mt-5 flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
 						<input id="bordered-radio-1" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
 						<label for="bordered-radio-1" class="w-full py-4 ms-2 text-sm font-medium text-black dark:text-black">Male</label>
@@ -48,8 +48,15 @@ import NavBar from "../../components/navBar/navBar.svelte";
 					<div class="mt-5 flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
 						<input id="bordered-radio-2" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
 						<label for="bordered-radio-2" class="w-full py-4 ms-2 text-sm font-medium text-black dark:text-black">Female</label>
-					</div>
+					</div> -->
 
+					<label for="underline_select" class="sr-only">Underline select</label>
+					<select name="selection" id="underline_select" class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+						<option selected>Gender</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+					</select>
+					
 					<!-- CheckBox Button -->
 					
 					
