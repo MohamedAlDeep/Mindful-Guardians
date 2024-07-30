@@ -17,9 +17,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency as needed */
-  z-index: 1; /* Ensures the overlay is above the image */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1; 
 }
+
 </style>
 <NavBar cookie = {data.status}/>
 <div class="relative">
@@ -27,8 +28,8 @@
         <img src={MainImage} alt="main image">
     </div>
     <div class="absolute top-1/4 left-5 z-10 flex flex-col justify-center items-center">
-        <h2 class="text-6xl font-bold text-white mb-20">Protecting Your Peace, Every Step of the Way</h2>
-        <a href="/signup" class="bg-teal-700 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded text-2xl">Book A Session</a>
+        <h2 class="text-4xl md:text-6xl font-bold text-white mb-5 md:mb-20">Protecting Your Peace, Every Step of the Way</h2>
+        <a href="/signup" class="bg-teal-700 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded text-xl md:text-2xl">Book A Session</a>
     </div>
 </div>
 
