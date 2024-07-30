@@ -36,6 +36,23 @@ import NavBar from "../../components/navBar/navBar.svelte";
 						  <input id="password" name="password" type="password" minlength="8" required class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 						</div>
 					</div>
+					
+					<!-- Radio Button -->
+					
+					
+
+					<div class="flex">
+						<div class="flex items-center h-5">
+							<input name="parent" id="helper-checkbox" aria-describedby="helper-checkbox-text" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+						</div>
+						<div class="ms-2 text-sm"> 
+							<label for="helper-checkbox" class="font-medium  text-black dark:text-black">Parent</label>
+							<p id="helper-checkbox-text" class="text-xs font-normal  text-slate-700 dark:text-grey-300">If you checked this box, this means that you are creating a parent account which is different than normal account.</p>
+						</div>
+					</div>
+
+
+
 				</div>
 				<div class="sm:col-span-4 mx-auto">
 					<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-l">Sign Up</button>

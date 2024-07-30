@@ -18,7 +18,7 @@ export const actions = {
         const user = await getUser(email);
     
         if(user.password == password && user.email == email){
-            cookies.set('Status', `${user.username}-${password}`, {path: '/'})
+            cookies.set('Status', `${user.email}-${password}`, {path: '/'})
             return redirect(302, '/dashboard')
         }else if(user.password != password && user.email != email){
             return json({message: `Wrong email or password`})
