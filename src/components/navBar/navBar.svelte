@@ -17,7 +17,7 @@ function toggleClass() {
         <ul class="flex flex-col md:flex-row gap-4 align-center {isActive ? '' : 'hidden'}">
 <<<<<<< Updated upstream
         <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500">Blog</a></li>
-        <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500">Sessions</a></li>
+        <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500">Courses</a></li>
 ||||||| Stash base
         <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500">Blog</a></li>
         <li><a href="" class="text-lg md:text-2xl  text-teal-600 hover:text-teal-500">Courses</a></li>
