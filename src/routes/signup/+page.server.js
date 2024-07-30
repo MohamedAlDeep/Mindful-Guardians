@@ -17,13 +17,16 @@ export const actions = {
 		const first_name = data.get('first-name');
 		const last_name = data.get('last-name');
 		const password = data.get('password');
-		let parent = data.get('parent');
+        
+        const radio = data.get('bordered-radio')
+        let parent = data.get('parent');
+        
         if(parent == null){
            parent = false
         }else{
             parent = true
         }
-       
+        console.log('Radio -> ',radio)
         const username = `${first_name} ${last_name}`
         let img = ''
         await addUser(email, username, password, parent, img);

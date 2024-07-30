@@ -38,10 +38,23 @@ import NavBar from "../../components/navBar/navBar.svelte";
 					</div>
 					
 					<!-- Radio Button -->
+
+					
+					<label class="mt-5 font-medium">Gender</label>
+					<div class="mt-5 flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
+						<input id="bordered-radio-1" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+						<label for="bordered-radio-1" class="w-full py-4 ms-2 text-sm font-medium text-black dark:text-black">Male</label>
+					</div>
+					<div class="mt-5 flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
+						<input id="bordered-radio-2" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+						<label for="bordered-radio-2" class="w-full py-4 ms-2 text-sm font-medium text-black dark:text-black">Female</label>
+					</div>
+
+					<!-- CheckBox Button -->
 					
 					
 
-					<div class="flex">
+					<div class="flex mt-5">
 						<div class="flex items-center h-5">
 							<input name="parent" id="helper-checkbox" aria-describedby="helper-checkbox-text" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
 						</div>
@@ -50,6 +63,8 @@ import NavBar from "../../components/navBar/navBar.svelte";
 							<p id="helper-checkbox-text" class="text-xs font-normal  text-slate-700 dark:text-grey-300">If you checked this box, this means that you are creating a parent account which is different than normal account.</p>
 						</div>
 					</div>
+
+					
 
 
 
