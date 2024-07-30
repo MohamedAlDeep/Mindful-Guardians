@@ -1,33 +1,47 @@
 <script >
 import "../../app.css";
 import NavBar from "../../components/navBar/navBar.svelte";
-let username = ''
-let password = ''
-let email = ''
-let message = ''
-const  handleSubmit = async() => {
-	message = ''
-	const response = await fetch('/signup', {
-		method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password,email }),
-	})
-	const data = await response.json()
-	message = data.message
-}
 </script>
 
 <NavBar cookie={false}/>
 
 <main>
-	<h1>Create an account</h1>
-	<form on:submit={handleSubmit} class="auth-form">
-		<h2>Username</h2>
-		<input class="bg-slate-300" type="text" name="username" bind:value={username}/>
-		<h2>Password</h2>
-		<input class="bg-slate-300" type="password" name="password" bind:value={password}/>
-		<h2>email</h2>
-		<input class="bg-slate-300" type="email" name="email" bind:value={email}/>
-		<button class="btn btn-primary bg-slate-300">Sign Up</button>
+	<form method="POST" action="?/signup" class="auth-form">
+		<div class="border-b border-gray-900/10 pb-12">
+			<h2 class="create-account-header text-base font-semibold leading-7 text-gray-900 text-center mt-6">Create Account</h2>  
+			<div class="flex flex-col w-1/4 mt-10   gap-x-6 gap-y-8">
+				<div class="flex flex-col ml-32 w-full">
+					<div class="sm:col-span-3">
+						<label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
+						<div class="mt-2">
+						  <input type="text" name="first-name" required id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+						</div>
+					</div>
+					<div class="sm:col-span-3">
+						<label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
+						<div class="mt-2">
+						  <input type="text" name="last-name" required id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+						</div>
+					</div>
+			  
+					<div class="sm:col-span-4">
+						<label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+						<div class="mt-2">
+						  <input id="email" name="email" required type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+						</div>
+					</div>
+					<div class="sm:col-span-4">
+						<label for="email" class="block text-sm font-medium leading-6 text-gray-900">Passowrd</label>
+						<div class="mt-2">
+						  <input id="password" name="password" type="password" minlength="8" required class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+						</div>
+					</div>
+				</div>
+				<div class="sm:col-span-4 mx-auto">
+					<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-l">Sign Up</button>
+				</div>
+			</div>
+		</div>
 	</form>
+	
 </main>
