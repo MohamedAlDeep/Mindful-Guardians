@@ -12,7 +12,7 @@ const  handleSubmit = async() => {
 	const data = await response.json()
 }
 </script>
-<NavBar/>
+<NavBar cookie={false}/>	
 <main>
 	<h1>Login</h1>
 	<form on:submit={handleSubmit} class="auth-form">

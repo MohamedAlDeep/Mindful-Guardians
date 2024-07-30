@@ -4,13 +4,13 @@ import Logo from './Logo.png';
 export let cookie
 console.log(cookie)
 let isActive = true;
-async function handleSignOut(){
-    const response = await fetch('/signout', {
-		method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-	})
-	response
-}
+// async function handleSignOut(){
+//     const response = await fetch('/signout', {
+// 		method: 'DELETE',
+//         headers: { 'Content-Type': 'application/json' },
+// 	})
+// 	return response
+// }
 function toggleClass() {
     isActive = !isActive;
 }
@@ -30,14 +30,11 @@ function toggleClass() {
         </ul>
         <div class="flex flex-row md:flex-row items-center gap-4">
             {#if cookie == true}
-                <a href='/' on:click={handleSignOut}>Sign Out</a>    
+                <a href="/signout" class="bg-green-200">Sign Out</a> 
             {:else}
             <a href="/signup" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Sign Up</a>
             <a href="/login" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Log In</a>  
             {/if}
-
-            
-           
         </div>  
     </nav>
     <div class="flex-shrink-0 md:hidden">
