@@ -6,7 +6,7 @@ console.log(cookie)
 let isActive = true;
 async function handleSignOut(){
     const response = await fetch('/signout', {
-		method: 'GET',
+		method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
 	})
 	response
@@ -30,14 +30,13 @@ function toggleClass() {
         </ul>
         <div class="flex flex-row md:flex-row items-center gap-4">
             {#if cookie == true}
-                <a href='/' on:click={handleSignOut}>Sign Out</a>    
+                <button on:click={handleSignOut} class="bg-green-200">
+                    Sign Out
+                </button> 
             {:else}
             <a href="/signup" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Sign Up</a>
             <a href="/login" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Log In</a>  
             {/if}
-
-            
-           
         </div>  
     </nav>
     <div class="flex-shrink-0 md:hidden">

@@ -17,7 +17,7 @@ const  handleSubmit = async() => {
 }
 </script>
 
-<NavBar/>
+<NavBar cookie={false}/>
 
 <main>
 	<h1>Create an account</h1>
